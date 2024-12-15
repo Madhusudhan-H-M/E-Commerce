@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive BOGO Offer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YAY! It's BOGO</h1>
+        <!-- 1 Unit Option -->
+        <div class="option">
+                        <input type="radio" name="bogo" id="option1" value="1">
+            <label for="option1">
+            
+                <div class="discount">10% Off</div>
+                <div>1 Unit</div>
+                <div class="price">$10.00 USD</div>
+                <span class="original-price">$24.00 USD</span>
+                <div class="product-details">
+                    <span class="label"></span>
+                    <div class="product-row">
+                        <label for="product-row">Size</label>
+                        <span class="label">#1</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <label for="product-row">Color</label>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                    <div class="product-row">
+                        <span class="label">#2</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <!-- 2 Units Option -->
+        <div class="option">
+            <input type="radio" id="option2" name="bogo" value="18" checked />
+            <label for="option2">
+                <div class="discount">20% Off</div>
+                <div>2 Units</div>
+                <div class="price">$18.00 USD</div>
+                <span class="original-price">$24.00 USD</span>
+                <span class="most-popular">MOST POPULAR</span>
+                <div class="product-details">
+                    <span class="label"></span>
+                    <div class="product-row">
+                        <div class="size1">Size</div>
+                        <span class="label">#1</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <div class="color">Color</div>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                    <div class="product-row">
+                        
+                        <span class="label">#2</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <!-- 3 Units Option -->
+        <div class="option">
+            <input type="radio" id="option3" name="bogo" value="24" />
+            <label for="option3">
+                <div class="discount">30% Off</div>
+                <div>3 Units</div>
+                <div class="price">$24.00 USD</div>
+                <span class="original-price">$24.00 USD</span>
+                <div class="product-details">
+                    <span class="label"></span>
+                    <div class="product-row">
+                        <label for="product-row">Size</label>
+                        <span class="label">#1</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <label for="product-row">Color</label>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                    <div class="product-row">
+                        <span class="label">#2</span>
+                        <select class="size">
+                            <option value="s">S</option>
+                        </select>
+                        <select class="color">
+                            <option value="black">Black</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="free-delivery">Free Delivery</div>
+        <div class="total">Total: $18.00 USD</div>
+        <button>+ Add to cart</button>
+    </div>
+
+    <script>
+        const options = document.querySelectorAll('input[name="bogo"]');
+        const totalDisplay = document.querySelector('.total');
+
+        options.forEach(option => {
+            option.addEventListener('change', function () {
+                const price = this.value;
+                totalDisplay.textContent = `Total: $${price}.00 USD`;
+            });
+        });
+    </script>
+</body>
+</html>
